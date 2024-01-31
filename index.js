@@ -15,14 +15,6 @@ const render = require("./src/page-template.js");
 
 const employees = [];
 
-//PseudoCode
-// Manager Info
-// Initial Prompt w/ choices
-//1 - add intern (new function, ending with Initial Prompt being called)
-//2 - add engineer (new function, ending with Initial Prompt being called)
-//3 - finish building team - render HTML
-// constructors for each role, base being employee, and all others importing then extending employee
-
 function managerPrompt () {
     inquirer 
     .prompt([
@@ -137,6 +129,12 @@ function internPrompt() {
     })
 }
 
+renderHTML = function() {
+    const htmlContent = render(employees);
+    fs.writeFileSync(outputPath, htmlContent);
+    console.log('Team Generated!');
+  }
+
 optionsPrompt = function() {
     inquirer
     .prompt([
@@ -172,10 +170,6 @@ optionsPrompt = function() {
           return console.log('Something went wrong, please try again!')
         }
     })
-}
-
-renderHTML = function() {
-    
 }
 
 managerPrompt();
