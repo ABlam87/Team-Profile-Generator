@@ -1,5 +1,1 @@
-{
-  "dependencies": {
-    "inquirer": "^9.2.13"
-  }
-}
+{"keywords":[],"author":"","license":"ISC","dependencies":{"inquirer":"^6.5.2"}}
